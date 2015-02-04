@@ -1,0 +1,28 @@
+.nav-list {
+	&:extend(._stretch);
+	cursor: default; // prevents the default text cursor in between items
+	margin: 0 auto;
+	padding: 0;
+
+	@media @tablet-down {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+
+.nav-item {
+	vertical-align: middle;
+	letter-spacing: 1px;
+	list-style: none;
+	font-weight: bold;
+	font-size: 1rem;
+	letter-spacing: normal;
+
+	.no-flexbox & { // .no-flexbox .nav-item
+		display: inline-block;
+	}
+}
+
+.nav-link {
+	display: inline-block;
+}

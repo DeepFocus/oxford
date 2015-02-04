@@ -1,0 +1,28 @@
+/**
+ * Ensure font-size values are available in rem and px units for older browsers.
+ * This is useless if everything else is in rem units, so it's only here as a
+ * convenience. The pixel sizes are protected by Modernizr's cssremunit test.
+ */
+.font-size(@font-size) {
+	// Set the element's font-size using px units, with a modernizr-enabled
+	// pixel value fallback for browsers that don't support rem units.
+	._prop(@font-size) when (ispixel(@font-size)) {
+		@rem-size: (@font-size / @base-font-size);
+		._prop(unit(@rem-size, rem));
+	}
+
+	// Set the element's font-size using rem units, with a modernizr-enabled
+	// pixel value fallback for browsers that don't support rem units.
+	._prop(@font-size) when (isunit(@font-size, rem)) {
+		@pixel-value: unit((@font-size * @base-font-size), px);
+		font-size: @font-size;
+
+		.no-cssremunit & {
+			& when (@no-cssremunit = true) {
+				font-size: @pixel-value;
+			}
+		}
+	}
+
+	._prop(@font-size);
+}

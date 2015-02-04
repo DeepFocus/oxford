@@ -1,0 +1,21 @@
+.wrap {
+	margin: 0 auto;
+
+	& when (@is-responsive = true) {
+		max-width: @huge-device-width;
+		min-height: 100%;
+		min-width: @tiny-device-width;
+		padding: 0 @small-wrap-margin;
+		position: relative;
+
+		@media @desktop {
+			max-width: @big-device-width;
+			padding: 0 @big-wrap-margin;
+		}
+	}
+
+	& when (@is-responsive = false) {
+		padding: 0 @big-wrap-margin;
+		width: @big-device-width;
+	}
+}

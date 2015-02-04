@@ -1,0 +1,50 @@
+.fa-icon {
+	// Pull in FontAwesome
+	.fa();
+	font-size: 1em;
+}
+
+.fa-icon(@icon) {
+	// Dupe the FontAwesome var
+	&::before {
+		@fa-icon: "fa-var-@{icon}";
+		content: @@fa-icon;
+	}
+}
+
+.fa-icon-after(@icon) {
+	&::after {
+		@fa-icon: "fa-var-@{icon}";
+		content: @@fa-icon;
+	}
+}
+
+.icon {
+	&:extend(.box);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	font-style: normal;
+}
+
+.icon-social {
+	&:extend(.fa-icon, .icon);
+	font-size: 1.5rem; // 24px
+
+	&.facebook { // .facebook.icon-social
+		.fa-icon(~"facebook-square");
+	}
+
+	&.twitter { // .twitter.icon-social
+		.fa-icon(~"twitter");
+	}
+}
+
+.icon-close {
+	&:extend(.icon);
+	position: relative;
+
+	&::before { // .icon-close::before
+		content: '\2715';
+	}
+}

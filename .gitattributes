@@ -1,0 +1,4 @@
+js/build/*.min.js binary
+js/build/*.min.js.map binary
+css/*.min.css binary
+css/*.min.css.map binary

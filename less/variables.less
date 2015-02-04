@@ -1,0 +1,114 @@
+// Directory globals
+@img-base: ~"../img";
+@icons-base: ~"@{img-base}/icons";
+@fonts-base: ~"../fonts";
+
+
+// Typography variables
+@base-font-size: 16px;
+@base-line-height: 1.45;
+@base-font-weight: 300;
+
+
+// Default font list
+@default-fonts: Helvetica, Arial, sans-serif;
+@base-font-family: Roboto, @default-fonts;
+@headings-font-family: @base-font-family;
+
+// Controls the main .wrap media queries
+@is-responsive: true;
+
+// media query widths are in px: http://fvsch.com/code/bugs/rem-mediaquery/
+@tiny-device-width: 320px; // 20rem
+@small-device-width: 480px; // 30rem
+@wtf-device-width: 672px; // 42rem
+@normal-device-width: 768px; // 48rem
+@normal-device-width-max: (@normal-device-width - 1px); // 47.9375rem
+@big-device-width: 1024px; // 64rem
+@big-device-width-min: (@big-device-width + 1px); // 64.0625rem
+@huge-device-width: 1400px; // 87.5rem
+
+@small-wrap-margin: @base-font-size;
+@big-wrap-margin: (@base-font-size * 2);
+
+@small-wrap-width: (@tiny-device-width - (2 * @small-wrap-margin));
+@wtf-wrap-width: (@tiny-device-width + (2 * @small-wrap-margin));
+@normal-wrap-width: (@normal-device-width - (2 * @big-wrap-margin));
+@big-wrap-width: (@big-device-width - (2 * @big-wrap-margin));
+
+// High-resolution definitions
+@hires-device-pixel-ratio: 2;
+@hires-resolution: 192dpi;
+
+// Width smaller than @small-device-width
+@mobile: ~"only screen and (max-width: @{small-device-width})";
+
+// Width between @small-device-width and @normal-device-width
+@phablet: ~"only screen and (min-width: @{small-device-width}) and (max-width: @{normal-device-width})";
+
+// Width smaller than @wtf-device width
+@phablet-down: ~"only screen and (max-width: @{wtf-device-width})";
+
+// width larger than @small-device-width
+@phablet-up: ~"only screen and (min-width: @{small-device-width})";
+
+// width between @normal-device-width and @big-device-width
+@tablet: ~"only screen and (min-width: @{normal-device-width}) and (max-width: @{big-device-width})";
+
+// width smaller than @normal-device-width-max
+@tablet-down: ~"only screen and (max-width: @{normal-device-width-max})";
+
+// width larger than @normal-device-width
+@tablet-up: ~"only screen and (min-width: @{normal-device-width})";
+
+// width larger than @big-device-width-min
+@desktop: ~"only screen and (min-width: @{big-device-width-min})";
+
+@desktop-down: ~"only screen and (max-width: @{big-device-width})";
+
+@huge-desktop: ~"only screen and (min-width: @{huge-device-width})";
+
+@huge-desktop-down: ~"only screen and (max-width: @{huge-device-width})";
+
+// device has a high-resolution display
+@hires: ~"(-webkit-device-pixel-ratio: @{hires-device-pixel-ratio}), (resolution: @{hires-resolution})";
+
+// device reports a portrait orientation
+@portrait: ~"only screen and (orientation: portrait);";
+
+// device reports a landscape orientation (limited to @big-device-width and smaller screens)
+@landscape: ~"(orientation: landscape)";
+
+//Colors
+// Specify default colors for functions
+@white: rgba(255, 255, 255, 1); // #FFFFFF
+@black: rgba(0, 0, 0, 1);
+
+@dark-gray: rgba(99, 99, 99, 1); // #636363
+@light-gray: rgba(150, 150, 150, 1); // #969696
+@lighter-gray: rgba(227, 227, 227, 1); // #E3E3E3
+
+// Set transparent to white
+@transparent: fade(@white, 0%);
+
+// Client Colors
+// Default enabled/disabled colors, usually for buttons
+@deep-red: rgba(223, 32, 2, 1); // #DF2002
+@dark-blue: rgba(36, 125, 168, 1); // #247DA8
+@light-blue: rgba(178, 211, 227, 1); // #B2D3E3
+
+// Global color defaults
+@base-text-color: @dark-gray;
+@background-color: rgba(245, 245, 245, 1); // #F5F5F5 (refresh! refresh! refresh!)
+
+
+// Animation timings and stuff
+@default-transition-duration: 0.45s;
+@default-transition-timing: ease-in-out;
+@default-transition: @default-transition-duration @default-transition-timing;
+
+
+// Global dimensions for various things
+@small-header-height: 2.5rem; // 40px
+@normal-header-height: 3.75rem; // 60px
+@big-header-height: 5rem; // 80px

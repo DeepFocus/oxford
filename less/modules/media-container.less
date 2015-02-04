@@ -1,0 +1,11 @@
+.media-container {
+	.rect(100%, 0);
+	.topleft(@position: relative);
+	padding: 0 0 56.25%; // 16:9
+	margin: 0 0 2em;
+
+	.media {
+		&:extend(._stretch);
+		position: absolute;
+	}
+}

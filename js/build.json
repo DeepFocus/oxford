@@ -1,0 +1,24 @@
+{
+	"almond": true,
+	"baseUrl": "./js/",
+	"out": "js/build/app.min.js",
+	"include": "main",
+	"name": "lib/almond",
+	"findNestedDependencies": true,
+
+	"paths": {
+		"app": "app",
+		"jquery": "lib/jquery",
+		"jquery.transit": "lib/jquery.transit"
+	},
+
+	"shim": {
+		"jquery.transit": ["jquery"]
+	},
+
+	"waitSeconds": 15,
+
+	"preserveLicenseComments": false,
+	"optimize": "uglify2",
+	"generateSourceMaps": true
+}

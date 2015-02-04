@@ -1,0 +1,43 @@
+/**
+ * Horizontally align the element's children, similar to Flexbox's space-between
+ * property.
+ *
+ * Similar to the vertical-align hack, .justify creates an ::after which is
+ * treated like the last line in a justified flow. In justified text, the last
+ * line is left-aligned, so the ::after becomes the last line.
+ *
+ * This is a hack. Your children will have a font size of 0.1px! It's only
+ * necessary in IE and safari 6 and lower (not 6.1)
+ *
+ */
+.justify(@flex: true) {
+	line-height: inherit;
+	width: 100%;
+
+	.__hack() {
+		font-size: 0.1px;
+		text-align: justify;
+
+		&::after {
+			.pseudo(inline-block);
+			.rect(inherit, 0);
+		}
+	}
+
+
+	.flexbox & when (@flex = true) {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.no-flexbox & when (@flex = true) {
+		.__hack();
+	}
+
+	& when (@flex = false) {
+		.__hack();
+	}
+
+} ._justify { .justify(true); }

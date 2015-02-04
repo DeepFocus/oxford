@@ -1,0 +1,14 @@
+{
+	"browser": true,
+	"camelcase": true,
+	"curly": true,
+	"eqeqeq": true,
+	"evil": true,
+	"forin": true,
+	"immed": true,
+	"latedef": "nofunc",
+	"regexdash": true,
+	"sub": true,
+	"trailing": true,
+	"wsh": true
+}

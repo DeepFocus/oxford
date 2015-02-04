@@ -1,0 +1,14 @@
+.heading-link {
+	.icon { // .heading-link .icon
+		color: @light-gray;
+		opacity: 0;
+
+		.csstransitions & { // .csstransitions .heading-link .icon
+			transition: opacity 0.15s ease-in-out;
+		}
+	}
+
+	&:hover .icon { // .heading-link:hover .icon
+		opacity: 1;
+	}
+}

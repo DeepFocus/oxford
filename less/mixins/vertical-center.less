@@ -1,0 +1,32 @@
+/**
+ * Create a pseudo-element before the element which allows the element's children to
+ * be centered vertically. Requires that the child elements are inline-block.
+ *
+ */
+.vertical-center() {
+
+	.no-flexbox & {
+		font-size: 0;
+
+		&::before,
+		& > .container {
+			&:extend(.box);
+		}
+
+		> .container {
+			font-size: medium;
+		}
+
+		&::before {
+			.rect(0, 100%);
+			content: '';
+			margin-right: -0.25rem;
+		}
+	}
+
+	.flexbox & {
+		display: flex;
+		align-items: center;
+	}
+
+} ._vertical-center { .vertical-center(); }

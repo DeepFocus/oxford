@@ -1,0 +1,29 @@
+.main-header {
+	.rect(100%, @small-header-height);
+	background-color: @dark-blue;
+	box-shadow: 0 0 1rem fade(@black, 25%);
+	color: @white;
+	position: relative;
+
+	@media @tablet-up {
+		height: @normal-header-height;
+	}
+
+	@media @desktop {
+		height: @big-header-height;
+	}
+
+	.wrap { // .main-header .wrap
+		&:extend(._vertical-center all);
+		height: 100%;
+	}
+
+	.container { // .main-header .container
+		&:extend(._justify all);
+	}
+
+	.csspositionsticky & { // .csspositionsticky .main-header
+		.top(0, sticky);
+		z-index: 1;
+	}
+}

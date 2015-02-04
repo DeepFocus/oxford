@@ -1,0 +1,37 @@
+.site-title {
+	font-size: 1.25rem; // 20px
+	font-weight: 300;
+	line-height: 1.1;
+	margin: 0;
+	text-transform: capitalize;
+
+	@media @tablet-up {
+		font-size: 1.5rem; // 24px
+	}
+
+	@media @desktop {
+		font-size: 2rem; // 32px
+	}
+
+	a { // .site-title a
+		&:extend(.box);
+		border-bottom: 1px solid @transparent;
+
+		@media @tablet-up {
+			border-bottom-width: 2px;
+		}
+
+		&:hover { // .site-title a:hover
+			border-bottom-color: currentcolor;
+		}
+
+		.csstransitions & { // .csstransitions .site-title
+			transition: border-color 0.15s ease-in-out;
+		}
+	}
+
+	span { // .site-title span
+		font-size: 0.75em;
+		color: fade(@white, 75%);
+	}
+}
