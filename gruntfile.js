@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 			single_file: {
 				options: {
 					map: {
-						sourceContent: true,
+						sourcesContent: true,
 						prev: 'css/'
 					}
 				},
