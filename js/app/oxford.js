@@ -1,7 +1,4 @@
-define([
-	'jquery',
-	'app/toggle-expand'
-	], function($, toggleExpand) {
+define(['app/toggle-expand'], function(toggleExpand) {
 
 	var bodyId = document.body.id;
 
